@@ -1,0 +1,206 @@
+/* assets/css/style.css */
+
+:root {
+    --primary: #00b2a9;       /* Tosca (Primary Kemenkes) */
+    --secondary: #00aec7;     /* Biru Muda */
+    --accent: #d7df23;        /* Hijau Nipis */
+    --hover-color: #ef8a1c;   /* Oranye (Hover) */
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --bg-light: #f4f7f6;      /* Warna background soft */
+    --border-color: #e0e0e0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+a { text-decoration: none; color: inherit; }
+
+/* =========================================
+   NAVBAR & HEADER
+   ========================================= */
+header { background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; max-width: 1400px; margin: 0 auto; }
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+.nav-links { display: flex; list-style: none; gap: 5px; }
+.nav-item { position: relative; }
+.nav-item > a { display: block; padding: 10px 15px; font-weight: 500; color: var(--text-dark); transition: color 0.3s; }
+.nav-item:hover > a { color: var(--hover-color); }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background-color: white; min-width: 250px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 3px solid var(--primary); list-style: none; z-index: 10; }
+.dropdown-menu li a { display: block; padding: 12px 20px; font-size: 0.9rem; border-bottom: 1px solid var(--border-color); transition: background-color 0.3s, color 0.3s; }
+.dropdown-menu li a:hover { background-color: var(--bg-light); color: var(--hover-color); padding-left: 25px; }
+.nav-item:hover .dropdown-menu { display: block; }
+.hamburger { display: none; cursor: pointer; font-size: 1.5rem; color: var(--primary); }
+
+/* =========================================
+   MAIN LAYOUT & HERO BANNER
+   ========================================= */
+main { flex: 1; }
+.hero-section { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 60px 5% 120px 5%; position: relative; }
+.hero-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.hero-info { max-width: 650px; }
+.hero-info h4 { font-size: 1.2rem; font-weight: normal; margin-bottom: 5px; opacity: 0.9; }
+.hero-info h1 { font-size: 2.2rem; margin-bottom: 30px; line-height: 1.3; font-weight: 700; }
+.contact-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.9rem; }
+.info-item { display: flex; align-items: flex-start; gap: 12px; }
+.info-icon { color: var(--accent); font-size: 1.4rem; }
+.info-text strong { display: block; color: var(--accent); margin-bottom: 3px; }
+.info-text span { opacity: 0.9; line-height: 1.4; display: block; }
+
+/* =========================================
+   FLOATING ACTIONS
+   ========================================= */
+.floating-actions { max-width: 1400px; margin: -80px auto 50px auto; display: flex; justify-content: center; gap: 30px; position: relative; z-index: 10; padding: 0 5%; }
+.main-action-card { background-color: #ffffff; color: var(--text-dark); border: 1px solid var(--border-color); border-radius: 12px; padding: 35px 20px; text-align: center; width: 280px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.main-action-card:hover { transform: translateY(-8px); background-color: var(--hover-color); border-color: var(--hover-color); box-shadow: 0 15px 25px rgba(239, 138, 28, 0.3); color: white; }
+.main-action-icon { background-color: rgba(0, 178, 169, 0.1); color: var(--primary); width: 65px; height: 65px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 18px; transition: all 0.3s ease; }
+.main-action-card:hover .main-action-icon { background: white; color: var(--hover-color); }
+.main-action-card h3 { font-size: 1.1rem; line-height: 1.4; color: var(--text-dark); transition: color 0.3s ease; }
+.main-action-card:hover h3 { color: white; }
+
+/* =========================================
+   GRID LAYANAN & BERITA
+   ========================================= */
+.services-section { max-width: 1400px; margin: 0 auto 60px auto; padding: 0 5%; text-align: center; }
+.section-title { color: var(--primary); margin-bottom: 10px; font-size: 1.6rem; font-weight: bold; }
+.section-subtitle { color: #666; font-size: 0.95rem; margin-bottom: 40px; }
+.services-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.service-card { background: white; border-radius: 16px; padding: 30px 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid transparent; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; }
+.service-card:hover { transform: translateY(-5px); border-top: 4px solid var(--hover-color); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+.service-icon-wrapper { background-color: rgba(0, 178, 169, 0.1); color: var(--primary); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 15px; }
+.service-card h4 { font-size: 0.9rem; line-height: 1.4; color: var(--text-dark); }
+
+.news-section { max-width: 1400px; margin: 0 auto 80px auto; padding: 30px; background-color: white; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.news-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 25px; }
+.news-header h2 { color: var(--primary); font-size: 1.5rem; font-weight: bold; }
+.btn-lihat-semua { padding: 8px 20px; border: 1px solid var(--hover-color); color: var(--hover-color); border-radius: 20px; font-size: 0.9rem; font-weight: 500; transition: all 0.3s ease; }
+.btn-lihat-semua:hover { background-color: var(--hover-color); color: white; }
+.news-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.news-card { border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+.news-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+.news-img { width: 100%; height: 160px; object-fit: cover; background-color: var(--secondary); }
+.news-content { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
+.news-date { font-size: 0.75rem; color: #555; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; }
+.news-title { font-size: 0.9rem; color: var(--text-dark); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.main-footer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 60px 5% 30px 5%; margin-top: auto; }
+.footer-container { max-width: 1400px; margin: 0 auto; }
+.footer-heading { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; font-size: 1rem; letter-spacing: 1.5px; text-transform: uppercase; }
+.footer-heading::before { content: ''; display: block; width: 50px; height: 3px; background-color: var(--hover-color); }
+.footer-logos { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+.logo-box { background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 15px 25px; display: flex; align-items: center; justify-content: center; min-width: 160px; height: 70px; color: white; font-weight: 500; font-size: 0.9rem; transition: background-color 0.3s ease; }
+.logo-box:hover { background-color: rgba(255, 255, 255, 0.2); }
+.footer-divider { border-top: 1px solid rgba(255, 255, 255, 0.2); margin: 30px 0; }
+.footer-content-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; }
+.footer-box { background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 30px; }
+.footer-box h3 { font-size: 1.2rem; margin-bottom: 15px; color: white; font-weight: 600; }
+.footer-box p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); line-height: 1.8; }
+.footer-box strong { color: white; font-size: 1.2rem; }
+.social-icons { display: flex; gap: 12px; margin-top: 15px; }
+.social-icons a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 8px; color: white; font-weight: bold; transition: all 0.3s ease; }
+.social-icons a:hover { background-color: var(--hover-color); border-color: var(--hover-color); transform: translateY(-3px); }
+.footer-copyright { text-align: center; border-top: 1px dashed rgba(255, 255, 255, 0.3); margin-top: 50px; padding-top: 25px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.8); }
+
+/* =========================================
+   STYLING HALAMAN DALAM & INFORMASI PUBLIK
+   ========================================= */
+.inner-header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 50px 5% 100px 5%; text-align: center; }
+.inner-header h1 { font-size: 2.2rem; margin-bottom: 10px; font-weight: bold; }
+.inner-header p { font-size: 1.1rem; opacity: 0.9; }
+.inner-content { max-width: 1000px; margin: -50px auto 60px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); position: relative; z-index: 10; color: var(--text-dark); line-height: 1.8; }
+.inner-content h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
+
+/* =========================================
+   STYLING FORM GLOBAL (PERMOHONAN & KEBERATAN)
+   ========================================= */
+.form-wrapper { max-width: 1100px; margin: -60px auto 60px auto; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: relative; z-index: 10; overflow: hidden; }
+.form-header-line { height: 5px; background: linear-gradient(90deg, var(--primary) 0%, var(--hover-color) 100%); }
+.form-header-content { padding: 30px 40px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
+.form-header-title h2 { color: var(--primary); font-size: 1.6rem; font-weight: 700; }
+.form-header-title span { font-size: 0.85rem; color: #666; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+.form-steps { display: flex; gap: 15px; }
+.step-box { border: 1px solid var(--border-color); padding: 10px 15px; border-radius: 6px; text-align: center; background-color: var(--bg-light); min-width: 100px; }
+.step-box strong { display: block; font-size: 0.85rem; color: var(--text-dark); }
+.step-box span { font-size: 0.7rem; color: #888; text-transform: uppercase; }
+
+.form-body { padding: 40px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.form-col { display: flex; flex-direction: column; }
+.form-section-title { font-size: 1rem; color: var(--primary); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 25px; }
+
+.form-group { margin-bottom: 22px; }
+.form-label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.form-control { width: 100%; padding: 12px 15px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.95rem; color: var(--text-dark); background-color: #fafafa; transition: border 0.3s ease; }
+.form-control:focus { outline: none; border-color: var(--primary); background-color: white; box-shadow: 0 0 0 3px rgba(0, 178, 169, 0.1); }
+textarea.form-control { min-height: 120px; resize: vertical; }
+
+.text-danger { color: #dc3545; font-size: 0.75rem; background-color: #ffeaea; border: 1px solid #ffc2c2; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; font-style: italic; }
+
+.upload-area { border: 2px dashed var(--primary); background-color: rgba(0, 178, 169, 0.03); border-radius: 8px; padding: 30px; text-align: center; cursor: pointer; transition: all 0.3s ease; }
+.upload-area:hover { background-color: rgba(0, 178, 169, 0.08); }
+.upload-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
+.upload-text { font-size: 0.9rem; color: #555; }
+
+.radio-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.radio-item { border: 1px solid var(--border-color); border-radius: 6px; padding: 10px 15px; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: border 0.3s; }
+.radio-item:hover { border-color: var(--primary); background-color: #f9fdfc; }
+.radio-item input { cursor: pointer; accent-color: var(--primary); }
+.radio-item span { font-size: 0.9rem; font-weight: 500; }
+
+.form-footer { margin-top: 40px; text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; }
+.btn-submit { background-color: var(--primary); color: white; border: none; padding: 15px 40px; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 178, 169, 0.3); transition: all 0.3s ease; }
+.btn-submit:hover { background-color: var(--hover-color); box-shadow: 0 6px 20px rgba(239, 138, 28, 0.4); transform: translateY(-2px); }
+
+/* =========================================
+   STYLING KHUSUS FORM KEBERATAN (BARU)
+   ========================================= */
+.validation-box { background-color: #f8fafc; border: 1px solid var(--border-color); border-radius: 8px; padding: 25px; margin-bottom: 35px; }
+.validation-box-title { font-size: 0.95rem; color: var(--primary); font-weight: bold; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
+.validation-inputs { display: flex; gap: 20px; align-items: flex-end; }
+.validation-inputs .form-group { margin-bottom: 0; flex: 1; }
+.btn-cek { background-color: var(--primary); color: white; border: none; padding: 13px 25px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; white-space: nowrap; height: 45px; }
+.btn-cek:hover { background-color: var(--hover-color); }
+
+.checkbox-card-stack { display: flex; flex-direction: column; gap: 12px; }
+.checkbox-card { border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; display: flex; align-items: flex-start; gap: 15px; cursor: pointer; transition: all 0.3s ease; background-color: white; }
+.checkbox-card:hover { border-color: var(--primary); box-shadow: 0 4px 10px rgba(0, 178, 169, 0.08); transform: translateX(5px); }
+.checkbox-card input[type="checkbox"] { margin-top: 4px; cursor: pointer; accent-color: var(--primary); transform: scale(1.2); }
+.checkbox-card span { font-size: 0.85rem; color: var(--text-dark); line-height: 1.5; font-weight: 500; }
+.checkbox-card-special { border: 1px dashed var(--primary); background-color: rgba(0, 178, 169, 0.02); margin-top: 10px; }
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 1024px) { .services-grid, .news-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); } }
+@media (max-width: 768px) {
+    .hero-section { padding: 40px 5% 100px 5%; }
+    .hero-info h1 { font-size: 1.8rem; }
+    .contact-info-grid { grid-template-columns: 1fr; }
+    .floating-actions { flex-direction: column; align-items: center; margin-top: -60px; }
+    .main-action-card { width: 100%; max-width: 350px; }
+    .news-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .footer-content-grid { grid-template-columns: 1fr; }
+    .footer-logos { justify-content: center; }
+    .hamburger { display: block; }
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background-color: white; flex-direction: column; padding: 10px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+    .nav-links.active { display: flex; }
+    .nav-item { width: 100%; }
+    .dropdown-menu { position: static; box-shadow: none; border-top: none; padding-left: 20px; background-color: #f9f9f9; display: none; }
+    .nav-item.active .dropdown-menu { display: block; }
+    .inner-header { padding: 40px 5% 80px 5%; }
+    .inner-content { padding: 25px; margin-top: -40px; margin-left: 5%; margin-right: 5%; }
+    
+    /* Responsif Form */
+    .form-header-content { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .form-steps { width: 100%; overflow-x: auto; padding-bottom: 10px; }
+    .form-body { padding: 25px; }
+    .form-grid { grid-template-columns: 1fr; gap: 30px; }
+    .radio-group { grid-template-columns: 1fr; }
+    .btn-submit { width: 100%; }
+    
+    /* Responsif Keberatan */
+    .validation-inputs { flex-direction: column; align-items: stretch; }
+    .btn-cek { width: 100%; }
+}

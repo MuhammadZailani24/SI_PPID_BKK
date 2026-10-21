@@ -20,8 +20,8 @@ try {
     die("Koneksi PDO Gagal: " . $e->getMessage());
 }
 
-$bot_token = '8838750735:AAER7EhJnD7Po8xO6ptEZNp59jgdwv3-E2o';
-$admin_chat_id = '7279608699';
+$bot_token = '8317540330:AAExILR-ug8ua8SL-GrVFAhbEBI48Ipylj8';
+$admin_chat_id = '8966610923';
 
 // Hapus webhook otomatis
 file_get_contents("https://api.telegram.org/bot" . $bot_token . "/deleteWebhook");

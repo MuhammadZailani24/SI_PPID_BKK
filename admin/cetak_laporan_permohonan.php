@@ -141,36 +141,6 @@ $query = $conn->query("SELECT * FROM permohonan_informasi WHERE $where_sql ORDER
             justify-content: center;
         }
 
-        /* Desain Stempel PPID */
-        .stempel-ppid {
-            position: absolute;
-            width: 85px;
-            height: 85px;
-            border: 3px solid rgba(29, 78, 216, 0.65);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: rotate(-15deg);
-            z-index: -1;
-        }
-        .stempel-inner {
-            border: 1px solid rgba(29, 78, 216, 0.65);
-            width: 73px;
-            height: 73px;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: rgba(29, 78, 216, 0.75);
-            font-family: Arial, sans-serif;
-            line-height: 1.1;
-        }
-        .stempel-inner span:nth-child(1) { font-size: 11pt; font-weight: 900; letter-spacing: 1px; }
-        .stempel-inner span:nth-child(2) { font-size: 6.5pt; font-weight: bold; }
-        .stempel-inner span:nth-child(3) { font-size: 5.5pt; font-weight: bold; margin-top: 2px; border-top: 1px solid rgba(29, 78, 216, 0.65); padding-top: 2px; }
-
         /* Tombol Cetak (Sembunyi saat diprint) */
         @media print {
             .btn-print { display: none !important; }
@@ -268,14 +238,6 @@ $query = $conn->query("SELECT * FROM permohonan_informasi WHERE $where_sql ORDER
             <p><strong>PPID BKK Kelas I Banjarmasin</strong></p>
             
             <div class="ttd-space">
-                <!-- Efek Stempel PPID -->
-                <div class="stempel-ppid">
-                    <div class="stempel-inner">
-                        <span>PPID</span>
-                        <span>BKK KELAS I</span>
-                        <span>BANJARMASIN</span>
-                    </div>
-                </div>
             </div>
             
             <p style="text-decoration: underline; font-weight: bold;">Tim Pelayanan Informasi Publik</p>
